@@ -16,15 +16,6 @@ services:
       - postgres
     restart: always
 
-  composer:
-    container_name: composer
-    image: composer
-    command: composer update
-    volumes:
-      - ./:/app
-    depends_on:
-      - php
-
   php:
     container_name: on-boarding-php
     build: ./docker/php
