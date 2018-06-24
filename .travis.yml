@@ -26,7 +26,7 @@ before_script:
   - ./cc-test-reporter before-build
 
 script:
-  #- ./vendor/bin/simple-phpunit --coverage-clover clover.xml
+  - ./vendor/bin/codecept run unit --coverage --coverage-xml
   # this checks that the source code follows the Symfony Code Syntax rules
   #- ./vendor/bin/php-cs-fixer fix --diff --dry-run -v
   # this checks that the application doesn't use dependencies with known security vulnerabilities
@@ -37,4 +37,5 @@ script:
   #- ./bin/console doctrine:schema:validate --skip-sync -vvv --no-interaction
 
 after_script:
+  - mv tests/_output/coverage.xml clover.xml
   - ./cc-test-reporter after-build --coverage-input-type clover --id $CC_TEST_REPORTER_ID --exit-code $TRAVIS_TEST_RESULT
