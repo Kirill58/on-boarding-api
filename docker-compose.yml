@@ -9,8 +9,8 @@ services:
      - 80:80
      - 443:443
     volumes:
-      - ../:/app
-      - ./etc/nginx/app.conf:/etc/nginx/conf.d/default.conf
+      - ./:/app
+      - ./docker/etc/nginx/app.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - php
       - postgres
@@ -21,18 +21,18 @@ services:
     image: composer
     command: composer update
     volumes:
-      - ../:/app
+      - ./:/app
     depends_on:
       - php
 
   php:
     container_name: on-boarding-php
-    build: php
+    build: ./docker/php
     expose:
       - 9001
     volumes:
-      - ../:/app
-      - ./etc/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+      - ./:/app
+      - ./docker/etc/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
     working_dir: /app
     environment:
         XDEBUG_CONFIG: remote_host=${XDEBUG_REMOTE_HOST}
@@ -48,4 +48,4 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
     volumes:
-      - ./.data/:/var/lib/postgresql
+      - ./docker/.data/:/var/lib/postgresql
