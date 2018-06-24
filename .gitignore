@@ -3,3 +3,5 @@
 /public/bundles/
 /var/
 /vendor/
+/.php_cs
+/.php_cs.cache
