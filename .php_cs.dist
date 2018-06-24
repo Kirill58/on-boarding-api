@@ -4,6 +4,9 @@ $finder = PhpCsFixer\Finder::create()
     ->in(__DIR__)
     ->exclude('config')
     ->exclude('var')
+    ->exclude('tests/_data')
+    ->exclude('tests/_output')
+    ->exclude('tests/_support/_generated')
     ->notPath('bin/console')
     ->notPath('public/index.php');
 
