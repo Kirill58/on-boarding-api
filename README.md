@@ -52,7 +52,12 @@ To be added
 
 Running tests
 -----
-To be added
+To run tests you should connect via ssh to your php docker container and run following commands:
+
+```bash
+cd /app
+./vendor/bin/codecept run
+```
 
 
 [1]: https://docker.com
