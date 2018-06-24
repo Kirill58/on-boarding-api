@@ -8,10 +8,10 @@ class CalculatorTest extends \Codeception\Test\Unit
     protected $tester;
 
     // tests
-    public function testSumm()
+    public function testSum()
     {
         $calculator = new \App\Utils\Calculator();
 
-        $this->assertEquals(3, $calculator->sum(1, 2));
+        $this->assertSame(3, $calculator->sum(1, 2));
     }
 }
