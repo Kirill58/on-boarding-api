@@ -27,7 +27,7 @@ If you want to use `XDEBUG` you should change your IDE configuration correspondi
 Before you run docker environment you should copy `.env.dist` file to `.env`.
 After it you can deploy your docker environment.
 
-##### Deployment on MAC
+#### Deployment on MAC
 
 To deploy environment on MAC you should run following commands:
 
@@ -44,13 +44,14 @@ Here is example of the line you should add:
 127.0.0.1 on-boarding.test
 ```
 
-##### Deployment on Windows
+#### Deployment on Windows
 To be added
 
-##### Deployment under proxy
+#### Deployment under proxy
 To be added
 
-##### Running tests
+Running tests
+-----
 To be added
 
 
